@@ -1,119 +1,27 @@
-body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-    background: linear-gradient(45deg, #1a3d50, #0a2838);
-    font-family: Arial, sans-serif;
-    color: white;
-    text-align: center;
-    overflow: hidden;
-    position: relative;
-}
-
-.logo {
-    position: absolute;
-    width: 60px;
-    top: 10px;
-}
-
-.logo-left {
-    left: 10px;
-}
-
-.logo-right {
-    right: 10px;
-    width: 120px;
-}
-
-.container {
-    position: relative;
-    z-index: 2;
-    opacity: 0;
-    animation: fadeIn 1.5s ease-in forwards;
-    padding: 20px;
-}
-
-h1, .subtitle {
-    font-size: 2.2em;
-    margin-bottom: 15px;
-    white-space: nowrap;
-    overflow: hidden;
-    display: inline-block;
-    opacity: 0;
-    animation: fadeInText 1.5s ease-in forwards 0.5s;
-}
-
-.subtitle {
-    font-size: 1.8em;
-    margin-top: 10px;
-    animation-delay: 2s;
-}
-
-@keyframes fadeInText {
-    from { opacity: 0; }
-    to { opacity: 1; }
-}
-
-/* الأزرار تظهر تدريجيًا بدون قفز مفاجئ */
-.options {
-    opacity: 0;
-    transform: translateY(10px);
-    animation: fadeInUp 1s ease-out forwards 3s;
-}
-
-.options a {
-    display: inline-block;
-    margin: 8px;
-    padding: 12px 20px;
-    font-size: 1.3em;
-    border-radius: 40px;
-    background: #ffcc00;
-    color: #1a3d50;
-    text-decoration: none;
-    transition: 0.3s;
-    opacity: 0;
-    transform: scale(0.8);
-    animation: popIn 0.6s ease-out forwards;
-}
-
-/* تأخير كل زرار عشان يطلعوا واحد ورا التاني */
-.options a:nth-child(1) { animation-delay: 3.2s; }
-.options a:nth-child(2) { animation-delay: 3.4s; }
-.options a:nth-child(3) { animation-delay: 3.6s; }
-
-/* تأثير ظهور سلس للأزرار */
-@keyframes popIn {
-    from { opacity: 0; transform: scale(0.8) translateY(10px); }
-    to { opacity: 1; transform: scale(1) translateY(0); }
-}
-
-/* تأثير ظهور الكتلة */
-@keyframes fadeInUp {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
-
-/* تحسينات عند تمرير الماوس */
-.options a:hover {
-    background: #e6b800;
-    transform: scale(1.1);
-    box-shadow: 0 0 20px #ffcc00;
-}
-
-/* تحسينات للموبايل */
 @media (max-width: 768px) {
-    h1, .subtitle {
-        font-size: 1.8em;
-    }
-    .options a {
-        font-size: 1.1em;
-        padding: 10px 18px;
+    body {
+        flex-direction: column;
+        justify-content: flex-start;
+        padding: 20px;
+        height: auto;
     }
     .logo {
-        width: 50px;
+        width: 60px;
+        top: 10px;
     }
     .logo-right {
-        width: 100px;
+        width: 120px;
+    }
+    .container {
+        width: 100%;
+        text-align: center;
+        padding-top: 50px;
+    }
+    h1 {
+        font-size: 2em;
+    }
+    .options a {
+        font-size: 1.2em;
+        padding: 10px 20px;
     }
 }
