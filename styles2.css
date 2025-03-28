@@ -1,0 +1,116 @@
+/* إعدادات عامة للصفحة */
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background: linear-gradient(135deg, #1a3d50, #0a2838);
+    font-family: 'Tajawal', sans-serif;
+    color: white;
+    text-align: center;
+    direction: rtl;
+    position: relative;
+    padding: 20px;
+    overflow: hidden;
+}
+
+/* اللوجو */
+.logo {
+    position: absolute;
+    width: 60px;
+    top: 15px;
+}
+.logo-left { left: 10px; }
+.logo-right { right: 10px; width: 120px; }
+
+/* العنوان - أنيميشن الكتابة */
+h1 {
+    font-size: 2.5em;
+    margin-bottom: 15px;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+/* صورة غاندي */
+.profile-img {
+    width: 180px;
+    height: auto;
+    margin-bottom: 15px;
+    border-radius: 50%;
+    border: 3px solid #ffcc00;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out 0.5s forwards;
+}
+
+/* النصوص */
+.points {
+    font-size: 1.2em;
+    max-width: 600px;
+    margin: 0 auto;
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out 1s forwards;
+}
+
+/* زرار التنقل */
+.navigation {
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin-top: 20px;
+}
+.nav-button {
+    padding: 12px 25px;
+    background: #ffcc00;
+    color: #1a3d50;
+    text-decoration: none;
+    font-size: 1.2em;
+    border-radius: 30px;
+    transition: 0.4s;
+    position: relative;
+    overflow: hidden;
+    font-weight: bold;
+}
+
+/* تأثير اللمعة على الأزرار */
+.nav-button::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255, 255, 255, 0.4) 10%, transparent 10%);
+    transition: 0.3s;
+    transform: translate(-50%, -50%) scale(0);
+}
+.nav-button:hover::before {
+    transform: translate(-50%, -50%) scale(1);
+}
+.nav-button:hover {
+    background: #e6b800;
+    transform: scale(1.1);
+}
+
+/* أنيميشن الظهور */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* تحسين المظهر على الشاشات الصغيرة */
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2em;
+    }
+    .profile-img {
+        width: 140px;
+    }
+    .points {
+        font-size: 1em;
+    }
+    .nav-button {
+        font-size: 1em;
+        padding: 10px 20px;
+    }
+}
